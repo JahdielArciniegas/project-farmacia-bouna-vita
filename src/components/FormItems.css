@@ -1,0 +1,7 @@
+input:focus + label {
+	top: -20px;
+}
+
+input:valid + label {
+	top: -20px;
+}
