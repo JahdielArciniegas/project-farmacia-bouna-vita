@@ -18,23 +18,23 @@ export default function NavBar() {
 			<div className="mr-40 grid place-content-center">
 				<ul className="flex flex-row gap-10 font-bold">
 					<li className="hover:scale-105">
-						<a className="hover:underline" href="">
+						<a className="hover:underline" href="#empleados">
 							Empleados
 						</a>
 					</li>
 					<li className="hover:scale-105">
-						<a className="hover:underline" href="">
+						<a className="hover:underline" href="#clientes">
 							Clientes
 						</a>
 					</li>
 					<li className="hover:scale-105">
-						<a className="hover:underline" href="">
-							Administrativo
+						<a className="hover:underline" href="#sucursales">
+							Sucursales
 						</a>
 					</li>
 					<li className="hover:scale-105">
-						<a className="hover:underline" href="">
-							Sucursales
+						<a className="hover:underline" href="#contacto">
+							Contactanos
 						</a>
 					</li>
 				</ul>
