@@ -16,10 +16,10 @@ export default function Home() {
 				<Clients />
 				<Sucursales />
 				<FormContacs />
-				<div className="w-full h-20 relative -z-0 flex justify-center text-white">
-					<div className="absolute w-full h-screen bg-slate-800 rounded-t-[50%] bottom-0 -z-10"></div>
+				<div className="w-full relative -z-0 flex justify-center text-white">
+					<div className="absolute w-full h-96 md:h-screen bg-slate-800 rounded-t-[50%] bottom-0 -z-10"></div>
 				</div>
-				<div className="fixed bottom-0 right-16 z-20">
+				<div className="fixed bottom-14 md:bottom-0 md:right-16 z-20">
 					<a href="#header">
 						<div className="animate-bounce flex justify-center items-center bg-[#33bb78] rounded-full w-16 h-16 text-white">
 							<ArrowUpIcon />

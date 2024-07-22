@@ -8,7 +8,7 @@ export default function Hero() {
 			id="header"
 			className="h-screen w-full bg-slate-200 overflow-hidden relative flex flex-col text-white justify-center items-center gap-4"
 		>
-			<div className="z-40 relative h-full w-5/6 flex flex-col justify-center">
+			<div className="z-40 relative h-full w-5/6 flex flex-col justify-center items-center md:items-start">
 				<div className="hidden md:block h-screen absolute -right-52  bottom-0 -z-20">
 					<picture className="h-full">
 						<img
@@ -35,7 +35,7 @@ export default function Hero() {
 							personalizada.
 						</p>
 					</div>
-					<div className=" flex gap-7">
+					<div className=" flex gap-7 ">
 						<div>
 							<NavLink to="/login">
 								<Buttons size="40" bgColor="white" textColor="[#33bb78]">

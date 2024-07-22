@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 export default function NavBar() {
 	return (
 		<div
-			className="z-50 sticky top-0 flex flex-row justify-between w-full h-20 pl-5 bg-[#33bb78] text-slate-50 shadow-lg"
+			className="z-50 sticky top-0 flex flex-row justify-center sm:justify-between w-full h-20 sm:pl-5 bg-[#33bb78] text-slate-50 shadow-lg"
 			id="nav"
 		>
 			<picture className="h-full w-auto">
@@ -15,8 +15,8 @@ export default function NavBar() {
 					/>
 				</NavLink>
 			</picture>
-			<div className="hidden mr-40 md:grid place-content-center">
-				<ul className="flex flex-row gap-10 font-bold ">
+			<div className="hidden lg:mr-40 sm:mr-10 sm:grid place-content-center">
+				<ul className="flex flex-row lg:gap-10 sm:gap-5 font-bold ">
 					<li className="hover:scale-105">
 						<a className="hover:underline" href="#empleados">
 							Empleados
