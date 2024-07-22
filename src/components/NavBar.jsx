@@ -15,8 +15,8 @@ export default function NavBar() {
 					/>
 				</NavLink>
 			</picture>
-			<div className="mr-40 grid place-content-center">
-				<ul className="flex flex-row gap-10 font-bold">
+			<div className="hidden mr-40 md:grid place-content-center">
+				<ul className="flex flex-row gap-10 font-bold ">
 					<li className="hover:scale-105">
 						<a className="hover:underline" href="#empleados">
 							Empleados
