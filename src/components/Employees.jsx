@@ -1,6 +1,6 @@
 import Buttons from './Buttons';
 
-export default function About() {
+export default function Employees() {
 	return (
 		<section
 			id="empleados"
