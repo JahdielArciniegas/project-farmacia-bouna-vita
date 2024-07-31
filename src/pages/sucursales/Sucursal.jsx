@@ -14,7 +14,7 @@ export default function Sucursal() {
     <div className="h-screen bg-slate-200 relative flex justify-center">
       <div className="z-40 relative h-full w-5/6 flex flex-col justify-center items-center gap-6">
         <h1 className="text-white text-6xl">Farmacia Bouna Vita</h1>
-        <div className="bg-white w-80 h-[500px] rounded-3xl flex flex-col gap-3 shadow-2xl">
+        <div className="bg-white w-80 h-[500px] rounded-3xl flex flex-col gap-3 shadow-2xl animate-opacity">
           <img
             className="w-full h-40 object-cover rounded-t-3xl"
             src={`../sucursalesPublic/${sucursal.imagenesSucursal}.webp`}
