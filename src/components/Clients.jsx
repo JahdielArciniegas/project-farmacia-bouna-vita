@@ -29,7 +29,7 @@ export default function Clients() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full mt-60 lg:mt-0 lg:gap-10 h-full justify-center items-center pt-7 ">
+      <div className="flex flex-col w-full mt-60 lg:mt-0 lg:gap-10 h-full justify-center items-center pt-7">
         <h2 className="text-3xl font-bold text-white text-center ">
           Testimonios de nuestros clientes
         </h2>
