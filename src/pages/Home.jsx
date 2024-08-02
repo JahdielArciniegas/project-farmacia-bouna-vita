@@ -1,11 +1,11 @@
 import NavBar from "../components/NavBar";
 import ArrowUpIcon from "../icons/ArrowUpIcons";
-import Hero from "../components/Hero";
+import Hero from "../components/sections/Hero";
 
-import Clients from "../components/Clients";
-import Sucursales from "../components/Sucursales";
-import FormContacs from "../components/FormContacs";
-import Employees from "../components/Employees";
+import Clients from "../components/sections/Clients";
+import Sucursales from "../components/sections/Sucursales";
+import FormContacs from "../components/sections/FormContacs";
+import Employees from "../components/sections/Employees";
 
 export default function Home() {
   return (

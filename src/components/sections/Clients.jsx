@@ -1,5 +1,5 @@
-import { testimonios } from "../data/testimonios";
-import CardClient from "./CardClient";
+import { testimonios } from "../../data/testimonios";
+import CardClient from "../client's/CardClient";
 
 export default function Clients() {
   return (

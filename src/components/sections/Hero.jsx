@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import Buttons from "./Buttons";
-import Background from "./Background";
+import Buttons from "../common/Buttons";
+import Background from "../common/Background";
 
 export default function Hero() {
   return (

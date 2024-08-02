@@ -1,5 +1,5 @@
-import { sucursales } from "../data/sucursales";
-import CardSucursales from "./CardSucursales";
+import { sucursales } from "../../data/sucursales";
+import CardSucursales from "../sucursal's/CardSucursales";
 
 export default function Sucursales() {
   return (

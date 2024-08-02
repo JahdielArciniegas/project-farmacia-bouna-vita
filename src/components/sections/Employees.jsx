@@ -1,4 +1,4 @@
-import Buttons from "./Buttons";
+import Buttons from "../common/Buttons";
 
 export default function Employees() {
   return (

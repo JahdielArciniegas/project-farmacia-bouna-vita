@@ -1,5 +1,5 @@
-import Buttons from "./Buttons";
-import FormItems from "./FormItems";
+import Buttons from "../common/Buttons";
+import FormItems from "../common/FormItems";
 
 export default function FormContacs() {
   return (

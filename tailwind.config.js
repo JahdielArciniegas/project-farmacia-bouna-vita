@@ -4,8 +4,7 @@ export default {
 	theme: {
 		extend: {
 			"animation": {
-				"fade-in-down": "fade-in-down 0.6s ease-in-out",
-				"fade-in-down-no-time" : "fade-in-down ease-in-out"
+				"fade-in-down": "fade-in-down 0.6s ease-in-out both",
 			},
 			"keyframes":{
 				"fade-in-down": {

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import Background from "../components/Background";
-import Buttons from "../components/Buttons";
-import FormItems from "../components/FormItems";
+import Background from "../components/common/Background";
+import Buttons from "../components/common/Buttons";
+import FormItems from "../components/common/FormItems";
 
 export default function LogIn() {
   return (
