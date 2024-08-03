@@ -7,12 +7,12 @@ export default function FormContacs() {
       id="contacto"
       className="w-full md:w-5/6 h-screen relative flex flex-col items-center z-10 gap-4 justify-center"
     >
-      <h2 className="text-3xl font-bold text-slate-800 md:text-white">
+      <h2 className="text-3xl font-bold text-slate-800 md:text-white fade-in-down">
         Contactanos
       </h2>
       <div className="md:w-2/3">
         <form
-          className="bg-[#33bb78aa] w-80 md:w-auto p-6 rounded-xl flex flex-col gap-3"
+          className="bg-[#33bb78aa] w-80 md:w-auto p-6 rounded-xl flex flex-col gap-3 fade-in-left"
           action=""
         >
           <div className="flex flex-col md:flex-row gap-2 w-full">

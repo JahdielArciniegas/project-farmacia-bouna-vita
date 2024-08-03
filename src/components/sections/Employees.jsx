@@ -4,7 +4,7 @@ export default function Employees() {
   return (
     <section
       id="empleados"
-      className=" w-5/6 h-screen flex flex-col justify-center items-center "
+      className=" w-5/6 h-screen flex flex-col justify-center items-center fade-in-up"
     >
       <div className="flex flex-col lg:flex-row gap-10">
         <div className="lg:w-2/5 flex flex-col items-center lg:items-start gap-4 mt-10">
