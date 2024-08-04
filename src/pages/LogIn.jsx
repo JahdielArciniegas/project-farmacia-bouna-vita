@@ -5,6 +5,28 @@ import FormItems from "../components/common/FormItems";
 import LogoTopPage from "../components/common/LogoTopPage";
 
 export default function LogIn() {
+  const expresionRegularCorreo =
+    /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
+  const expresionRegularContraseña =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { correo, contraseña } = Object.fromEntries(
+      new window.FormData(event.target)
+    );
+
+    if (!expresionRegularCorreo.test(correo)) {
+      console.log("El correo ingresado no tiene un formato valido");
+      return;
+    }
+    if (!expresionRegularContraseña.test(contraseña)) {
+      console.log("La contrseña no es valida");
+      return;
+    }
+    console.log("Enviando datos");
+  };
+
   return (
     <div className="w-full h-screen flex justify-center items-center relative bg-slate-200">
       <div className="w-8/12 flex flex-col items-center gap-4  z-40 h-3/5">
@@ -17,11 +39,12 @@ export default function LogIn() {
           <form
             className=" flex flex-col rounded-lg gap-4 w-full"
             action="submit"
+            onSubmit={handleSubmit}
           >
             <FormItems
-              labelText={"Nombre o Correo Electronico"}
+              labelText={"Correo Electronico"}
               placeholderText={"Ejemplo@gmail.com"}
-              id={"usuario"}
+              id={"correo"}
             />
             <FormItems
               labelText={"Contraseña"}
