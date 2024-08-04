@@ -15,7 +15,7 @@ export default function Employees() {
             En nuestra farmacia, contamos con un equipo de profesionales
             dedicados a brindar la mejor atención y cuidado a nuestros clientes.
           </p>
-          <a className="" href="">
+          <a className="" href="/send-your-cv">
             <Buttons size="">Unete a nuestro equipo</Buttons>
           </a>
         </div>

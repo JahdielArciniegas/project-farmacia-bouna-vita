@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import Background from "../components/common/Background";
 import Buttons from "../components/common/Buttons";
 import FormItems from "../components/common/FormItems";
+import LogoTopPage from "../components/common/LogoTopPage";
 
 export default function LogIn() {
   return (
@@ -51,6 +52,7 @@ export default function LogIn() {
           </form>
         </div>
       </div>
+      <LogoTopPage />
       <Background />
     </div>
   );

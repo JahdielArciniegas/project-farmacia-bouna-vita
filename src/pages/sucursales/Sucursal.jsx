@@ -1,6 +1,7 @@
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { sucursales } from "../../data/sucursales";
 import Background from "../../components/Background";
+import LogoTopPage from "../../components/common/LogoTopPage";
 
 export default function Sucursal() {
   const { namesSucursal } = useParams();
@@ -30,14 +31,7 @@ export default function Sucursal() {
           </div>
         </div>
       </div>
-      <NavLink to="/">
-        <img
-          className="z-40 w-40 h-auto absolute top-4 left-4"
-          src="../Logo.webp"
-          alt=""
-        />
-      </NavLink>
-
+      <LogoTopPage />
       <Background />
     </div>
   );

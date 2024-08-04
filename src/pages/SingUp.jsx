@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import Background from "../components/common/Background";
 import Buttons from "../components/common/Buttons";
 import FormItems from "../components/common/FormItems";
+import LogoTopPage from "../components/common/LogoTopPage";
 
 export default function SingUp() {
   return (
@@ -55,6 +56,7 @@ export default function SingUp() {
         </div>
       </div>
       <Background />
+      <LogoTopPage />
     </div>
   );
 }

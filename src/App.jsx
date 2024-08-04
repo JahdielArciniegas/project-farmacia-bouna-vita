@@ -9,6 +9,7 @@ const Home = lazy(() => import("./pages/Home"));
 const LogIn = lazy(() => import("./pages/LogIn"));
 const SingUp = lazy(() => import("./pages/SingUp"));
 const Sucursal = lazy(() => import("./pages/sucursales/Sucursal"));
+const SendCv = lazy(() => import("./pages/SendCv"));
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SingUp />} />
           <Route path="/sucursal/:namesSucursal" element={<Sucursal />} />
+          <Route path="/send-your-cv" element={<SendCv />} />
         </Route>
       </Routes>
       <Footer />
