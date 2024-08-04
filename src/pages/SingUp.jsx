@@ -5,6 +5,47 @@ import FormItems from "../components/common/FormItems";
 import LogoTopPage from "../components/common/LogoTopPage";
 
 export default function SingUp() {
+  const expresionRegularUser = /[a-z0-9]+(\.[a-z0-9]+)*/;
+  const expresionRegularCorreo =
+    /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
+  const expresionRegularContraseña =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+  const users = ["jahdiel", "pepito"];
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { usuario, correo, contraseña, repeatContraseña } =
+      Object.fromEntries(new window.FormData(event.target));
+
+    if (!expresionRegularUser.test(usuario)) {
+      console.log("El nombre de usuario no es valido");
+      return;
+    }
+
+    if (users.find((user) => user === usuario)) {
+      console.log("El nombre de usuario ya esta registrado");
+      return;
+    }
+
+    if (!expresionRegularCorreo.test(correo)) {
+      console.log("El correo ingresado no es valido");
+      return;
+    }
+
+    if (!expresionRegularContraseña.test(contraseña)) {
+      console.log("La contrseña ingresada no es valida");
+      return;
+    }
+
+    if (contraseña !== repeatContraseña) {
+      console.log("Las contraseñas no considen");
+      return;
+    }
+    console.log(usuario, correo, contraseña, repeatContraseña);
+    return;
+  };
+
   return (
     <div className="w-full h-screen flex justify-center items-center relative bg-slate-200">
       <div className="w-8/12 flex flex-col items-center gap-4  z-40 h-4/5">
@@ -17,6 +58,7 @@ export default function SingUp() {
           <form
             className=" flex flex-col rounded-lg gap-4 w-full"
             action="submit"
+            onSubmit={handleSubmit}
           >
             <FormItems
               labelText={"Nombre"}
