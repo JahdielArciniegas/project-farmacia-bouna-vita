@@ -16,6 +16,7 @@ export default function LogIn() {
       new window.FormData(event.target)
     );
     let userLocal;
+    let nombre = "";
     let emailLocal = "";
     let contraseñaLocal = "";
     if (localStorage.getItem(`user${correo}`)) {
@@ -40,6 +41,8 @@ export default function LogIn() {
         contraseñaLocal == contraseña
       ) {
         console.log("Contraseña correcta");
+        const usuario = users.find((user) => (user.email = correo));
+        nombre = usuario.nombre;
       } else {
         console.log("Su contrseña no es correcta");
         return;
@@ -48,6 +51,8 @@ export default function LogIn() {
       console.log("El correo que ingreso no se encuentra registrado");
       return;
     }
+
+    location.assign(`/dashboard/${nombre}`);
   };
 
   return (

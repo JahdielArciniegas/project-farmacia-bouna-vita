@@ -6,10 +6,9 @@ import LogoTopPage from "../../components/common/LogoTopPage";
 export default function Sucursal() {
   const { namesSucursal } = useParams();
   const nameSucursal = namesSucursal.split("-").join(" ");
-  const s = sucursales.filter(
+  const sucursal = sucursales.find(
     (sucursal) => sucursal.nombreSucursal === nameSucursal
   );
-  const sucursal = { ...s[0] };
 
   return (
     <div className="h-screen bg-slate-200 relative flex justify-center">
