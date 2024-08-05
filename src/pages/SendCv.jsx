@@ -17,7 +17,7 @@ export default function SendCv() {
             enviar el archivo correcto y buena suerte
           </p>
           <div className="self-center">
-            <a href="mailto:bounavitatrabajo@gmail.com">
+            <a href="mailto:bounavitatrabajo@gmailii.com">
               <Buttons bgColor="white" textColor="[#33bb78]" size="40">
                 Enviar
               </Buttons>

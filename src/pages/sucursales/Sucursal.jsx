@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { sucursales } from "../../data/sucursales";
-import Background from "../../components/Background";
+import Background from "../../components/common/Background";
 import LogoTopPage from "../../components/common/LogoTopPage";
 
 export default function Sucursal() {
