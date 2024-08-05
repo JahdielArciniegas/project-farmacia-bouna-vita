@@ -15,6 +15,14 @@ export default function LogIn() {
     const { correo, contraseña } = Object.fromEntries(
       new window.FormData(event.target)
     );
+    let userLocal;
+    let emailLocal = "";
+    let contraseñaLocal = "";
+    if (localStorage.getItem(`user${correo}`)) {
+      userLocal = JSON.parse(localStorage.getItem(`user${correo}`));
+      emailLocal = userLocal.email;
+      contraseñaLocal = userLocal.contraseña;
+    }
 
     if (!expresionRegularCorreo.test(correo)) {
       console.log("El correo ingresado no tiene un formato valido");
@@ -25,9 +33,12 @@ export default function LogIn() {
       return;
     }
 
-    if (users.find((user) => user.email == correo)) {
+    if (users.find((user) => user.email == correo) || emailLocal == correo) {
       console.log("Correo encontrado");
-      if (users.find((user) => user.contraseña == contraseña)) {
+      if (
+        users.find((user) => user.contraseña == contraseña) ||
+        contraseñaLocal == contraseña
+      ) {
         console.log("Contraseña correcta");
       } else {
         console.log("Su contrseña no es correcta");
