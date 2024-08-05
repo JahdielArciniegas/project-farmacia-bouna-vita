@@ -3,33 +3,56 @@ import Background from "../components/common/Background";
 import Buttons from "../components/common/Buttons";
 import FormItems from "../components/common/FormItems";
 import LogoTopPage from "../components/common/LogoTopPage";
+import {
+  expresionRegularContraseña,
+  expresionRegularCorreo,
+  expresionRegularUser,
+} from "../data/expressionRegular";
+import { users } from "../data/dataUser";
+
+class User {
+  constructor(nombre, email, contraseña, posicion = "cliente") {
+    this.nombre = nombre;
+    this.email = email;
+    this.contraseña = contraseña;
+    this.posicion = posicion;
+  }
+}
 
 export default function SingUp() {
-  const expresionRegularUser = /[a-z0-9]+(\.[a-z0-9]+)*/;
-  const expresionRegularCorreo =
-    /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
-  const expresionRegularContraseña =
-    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-
-  const users = ["jahdiel", "pepito"];
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const { usuario, correo, contraseña, repeatContraseña } =
       Object.fromEntries(new window.FormData(event.target));
+    let userLocal;
+    let nombreLocal = "";
+    let emailLocal = "";
+    if (localStorage.getItem(`user${correo}`)) {
+      userLocal = JSON.parse(localStorage.getItem(`user${correo}`));
+      nombreLocal = userLocal.nombre;
+      emailLocal = userLocal.email;
+    }
 
     if (!expresionRegularUser.test(usuario)) {
       console.log("El nombre de usuario no es valido");
       return;
     }
 
-    if (users.find((user) => user === usuario)) {
+    if (
+      users.find((user) => user.nombre === usuario) ||
+      nombreLocal == usuario
+    ) {
       console.log("El nombre de usuario ya esta registrado");
       return;
     }
 
     if (!expresionRegularCorreo.test(correo)) {
       console.log("El correo ingresado no es valido");
+      return;
+    }
+
+    if (users.find((user) => user.email === correo) || emailLocal == correo) {
+      console.log("El correo ingresado ya esta registrado");
       return;
     }
 
@@ -42,8 +65,9 @@ export default function SingUp() {
       console.log("Las contraseñas no considen");
       return;
     }
-    console.log(usuario, correo, contraseña, repeatContraseña);
-    return;
+
+    const user = JSON.stringify(new User(usuario, correo, contraseña));
+    localStorage.setItem(`user${correo}`, user);
   };
 
   return (

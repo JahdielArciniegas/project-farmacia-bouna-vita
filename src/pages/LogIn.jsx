@@ -3,13 +3,13 @@ import Background from "../components/common/Background";
 import Buttons from "../components/common/Buttons";
 import FormItems from "../components/common/FormItems";
 import LogoTopPage from "../components/common/LogoTopPage";
+import {
+  expresionRegularContraseña,
+  expresionRegularCorreo,
+} from "../data/expressionRegular";
+import { users } from "../data/dataUser";
 
 export default function LogIn() {
-  const expresionRegularCorreo =
-    /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
-  const expresionRegularContraseña =
-    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const { correo, contraseña } = Object.fromEntries(
@@ -24,7 +24,19 @@ export default function LogIn() {
       console.log("La contrseña no es valida");
       return;
     }
-    console.log("Enviando datos");
+
+    if (users.find((user) => user.email == correo)) {
+      console.log("Correo encontrado");
+      if (users.find((user) => user.contraseña == contraseña)) {
+        console.log("Contraseña correcta");
+      } else {
+        console.log("Su contrseña no es correcta");
+        return;
+      }
+    } else {
+      console.log("El correo que ingreso no se encuentra registrado");
+      return;
+    }
   };
 
   return (
