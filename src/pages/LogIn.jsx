@@ -3,58 +3,9 @@ import Background from "../components/common/Background";
 import Buttons from "../components/common/Buttons";
 import FormItems from "../components/common/FormItems";
 import LogoTopPage from "../components/common/LogoTopPage";
-import {
-  expresionRegularContraseña,
-  expresionRegularCorreo,
-} from "../data/expressionRegular";
-import { users } from "../data/dataUser";
+import { handleSubmit } from "../logic/handleSubmit";
 
 export default function LogIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const { correo, contraseña } = Object.fromEntries(
-      new window.FormData(event.target)
-    );
-    let userLocal;
-    let nombre = "";
-    let emailLocal = "";
-    let contraseñaLocal = "";
-    if (localStorage.getItem(`user${correo}`)) {
-      userLocal = JSON.parse(localStorage.getItem(`user${correo}`));
-      emailLocal = userLocal.email;
-      contraseñaLocal = userLocal.contraseña;
-    }
-
-    if (!expresionRegularCorreo.test(correo)) {
-      console.log("El correo ingresado no tiene un formato valido");
-      return;
-    }
-    if (!expresionRegularContraseña.test(contraseña)) {
-      console.log("La contrseña no es valida");
-      return;
-    }
-
-    if (users.find((user) => user.email == correo) || emailLocal == correo) {
-      console.log("Correo encontrado");
-      if (
-        users.find((user) => user.contraseña == contraseña) ||
-        contraseñaLocal == contraseña
-      ) {
-        console.log("Contraseña correcta");
-        const usuario = users.find((user) => (user.email = correo));
-        nombre = usuario.nombre;
-      } else {
-        console.log("Su contrseña no es correcta");
-        return;
-      }
-    } else {
-      console.log("El correo que ingreso no se encuentra registrado");
-      return;
-    }
-
-    location.assign(`/dashboard/${nombre}`);
-  };
-
   return (
     <div className="w-full h-screen flex justify-center items-center relative bg-slate-200">
       <div className="w-8/12 flex flex-col items-center gap-4  z-40 h-3/5">
